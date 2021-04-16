@@ -10,30 +10,33 @@ class _AnimaisState extends State<Animais> {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: [
+      childAspectRatio: MediaQuery.of(context).size.aspectRatio * 2,
+      //scrollDirection: Axis.horizontal,
+      //scrollDirection: Axis.vertical,
+      children: <Widget>[
         GestureDetector(
           onTap: () {},
-          child: Image.asset("assets/images/cao.png"),
+          child: Image.asset("assets/imagens/cao.png"),
         ),
         GestureDetector(
           onTap: () {},
-          child: Image.asset("assets/images/gato.png"),
+          child: Image.asset("assets/imagens/gato.png"),
         ),
         GestureDetector(
           onTap: () {},
-          child: Image.asset("assets/images/leao.png"),
+          child: Image.asset("assets/imagens/leao.png"),
         ),
         GestureDetector(
           onTap: () {},
-          child: Image.asset("assets/images/macaco.png"),
+          child: Image.asset("assets/imagens/macaco.png"),
         ),
         GestureDetector(
           onTap: () {},
-          child: Image.asset("assets/images/ovelha.png"),
+          child: Image.asset("assets/imagens/ovelha.png"),
         ),
         GestureDetector(
           onTap: () {},
-          child: Image.asset("assets/images/vaca.png"),
+          child: Image.asset("assets/imagens/vaca.png"),
         ),
       ],
     );
