@@ -9,50 +9,52 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  //Controlador
-  TabController _controller;
+
+  TabController _tabController;
+
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 3, vsync: this);
+    _tabController = TabController(
+        length: 3,
+        vsync: this
+    );
   }
 
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    _tabController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Aprenda Ingles"),
+        title: Text("Aprenda inglês"),
         bottom: TabBar(
           indicatorWeight: 4,
-          labelColor: Colors.white,
-          indicatorColor: Color(0xfff5e9b9),
-          labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          controller: _controller,
-          tabs: [
-            Tab(
-              text: "Animais",
-            ),
-            Tab(
-              text: "Numeros",
-            ),
-            Tab(
-              text: "Vogais",
-            ),
+          indicatorColor: Colors.white,
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold
+          ),
+          //labelColor: Colors.green,
+          //unselectedLabelColor: Colors.purple,
+          controller: _tabController,
+          tabs: <Widget>[
+            Tab(text: "Bichos",),
+            Tab(text: "Números",),
+            Tab(text: "Vogais",),
           ],
         ),
       ),
-      body: TabBar(
-        controller: _controller,
-        tabs: [
+      body: TabBarView(
+        controller: _tabController,
+        children: <Widget>[
           Animais(),
           Numeros(),
-          Vogais(),
+          Vogais()
         ],
       ),
     );
