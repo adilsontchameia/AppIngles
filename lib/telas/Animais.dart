@@ -8,10 +8,11 @@ class Animais extends StatefulWidget {
 
 class _AnimaisState extends State<Animais> {
   AudioCache _audioCache = AudioCache(prefix: "audios/");
-
+  //Reproduzindo os sons!
   _executar(String nomeAudio) {
     _audioCache.play(nomeAudio + ".mp3");
   }
+
   //Carregando todos audios ao iniciar a aplicacao
   @override
   void initState() {
